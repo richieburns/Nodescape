@@ -1,0 +1,6 @@
+usr/local/bin/nodescape-qt usr/bin
+share/pixmaps/nodescape32.xpm usr/share/pixmaps
+share/pixmaps/nodescape16.xpm usr/share/pixmaps
+share/pixmaps/nodescape128.png usr/share/pixmaps
+debian/nodescape-qt.desktop usr/share/applications
+debian/nodescape-qt.protocol usr/share/kde4/services/

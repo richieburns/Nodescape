@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/nodescape_bg.qm</file>
+        <file alias="de">locale/nodescape_de.qm</file>
+        <file alias="en">locale/nodescape_en.qm</file>
+        <file alias="es">locale/nodescape_es.qm</file>
+        <file alias="fi">locale/nodescape_fi.qm</file>
+        <file alias="fr">locale/nodescape_fr.qm</file>
+        <file alias="it">locale/nodescape_it.qm</file>
+        <file alias="ja">locale/nodescape_ja.qm</file>
+        <file alias="pl">locale/nodescape_pl.qm</file>
+        <file alias="pt">locale/nodescape_pt.qm</file>
+        <file alias="ru">locale/nodescape_ru.qm</file>
+        <file alias="sk">locale/nodescape_sk.qm</file>
+        <file alias="sv">locale/nodescape_sv.qm</file>
+        <file alias="vi">locale/nodescape_vi.qm</file>
+        <file alias="zh_CN">locale/nodescape_zh_CN.qm</file>
+        <file alias="zh_TW">locale/nodescape_zh_TW.qm</file>
+    </qresource>
+</RCC>
