@@ -129,7 +129,7 @@ public:
         pchMessageStart[1] = 0xb1;
         pchMessageStart[2] = 0xc2;
         pchMessageStart[3] = 0xd3;
-        vAlertPubKey = ParseHex("MHQCAQEEIHsH8UgYfuTv3aGa6dZHO6X1hz8oYLSod6yzbGLZR2x3oAcGBSuBBAAKoUQDQgAEb8nJ9EaVywFrAB9AgUgbd/gA1eXZIyniCwZSYJZESXJufowNsqO47tQ0FX8v7u+B6wdpJY+UO4o2suxb/X5GMg==");
+        vAlertPubKey = ParseHex("0415561219d873fe6efa91cc048b99ae2fb075fc8c88230a1cc9add9feb368afc7d881cfaa0b3a4e8a58062f519bafed02dd85c588f3130a5c282c2e30c1158625");
         nDefaultPort = 9696;
         nMaxTipAge = 6 * 60 * 60;
         nDelayGetHeadersTime = 24 * 60 * 60;
@@ -174,7 +174,7 @@ public:
 
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
-        strSporkPubKey = "ae70cf886cced72758bc62cbce08b618ee9297b9f78001a15f1db2a108a7482b62273d3d8a5653cbe6c049045945b069f82a253e49f761ae2351ef90f2c071a3a0";
+        strSporkPubKey = "048fa3b5326c69fe9c0eb651077016638fe33cdf1eb15f2b620b5aec99cbbcd9ac047c97baa8709c0fc53c811928011bc8e8c75a9355c1916bcb2deebc83ea7ff8";
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
@@ -247,7 +247,7 @@ public:
         pchMessageStart[1] = 0xb8;
         pchMessageStart[2] = 0xbe;
         pchMessageStart[3] = 0xd6;
-        vAlertPubKey = ParseHex("5fb987fad596743e0693d4eb36b26dcd5bed95dde43126d54648a16a31c2f6b47ac5fd2f6f728319902ac21dcfbb0bcd195f2c40e05cde8b36ce05c5837b392481");
+        vAlertPubKey = ParseHex("04b9e9f66f51eb0e9041fdf04c3992bd62b5a0e45bf2662bc7ba324602c57d78778fb1ad57b032402290ce8f78001437c0e4df874ff6a4bb6a9a033de92966066a");
         nDefaultPort = 19191;
         nMaxTipAge = 0x7fffffff; // allow mining on top of old blocks for testnet
         nDelayGetHeadersTime = 0x7fffffff;
@@ -286,7 +286,7 @@ public:
 
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 5 minutes
-        strSporkPubKey = "625bbe660eec3f9a8c77693386b5c020db550689c766633648115a19ffde8d8d4d948c5a9bd089c268aa3a85013fa981e55ee2ac86f9dfd0df851adcc8e6fdda49";
+        strSporkPubKey = "04ab68ee380ae8036da7a94e2b11ad4a3b6686fc28e62204d7fbca508d44732e5400f27e3d65ed153d3c5faf87ba99fbf0a7e5e2942e0b52a17c64977d86c6195b";
         strMasternodePaymentsPubKey = "2b8f95a9b1128e9057451eae85a9f8605cedaeb0af2d57e218ddf7ac1f9361e70963e1be6bdeaf6e5497c250838a3a19db131465249268fedeaa0ba3e53e093018";
 
         checkpointData = (CCheckpointData) {
