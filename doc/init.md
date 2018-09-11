@@ -104,7 +104,7 @@ use old versions of Upstart and do not supply the start-stop-daemon utility.
 Copy nodescaped.init to /etc/init.d/nodescaped. Test by running `service nodescaped start`.
 
 Using this script, you can adjust the path and flags to the nodescaped program by
-setting the CURVED and FLAGS environment variables in the file
+setting the NODESCAPED and FLAGS environment variables in the file
 /etc/sysconfig/nodescaped. You can also use the DAEMONOPTS environment variable here.
 
 4e) Mac OS X

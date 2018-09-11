@@ -1,4 +1,4 @@
-TOR SUPPORT IN CURVE CORE
+TOR SUPPORT IN NODESCAPE CORE
 =======================
 
 It is possible to run Nodescape Core as a Tor hidden service, and connect to such services.

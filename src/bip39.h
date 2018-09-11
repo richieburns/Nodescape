@@ -21,8 +21,8 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef CURVE_BIP39_H
-#define CURVE_BIP39_H
+#ifndef NODESCAPE_BIP39_H
+#define NODESCAPE_BIP39_H
 
 #include "support/allocators/secure.h"
 

@@ -87,7 +87,7 @@ class MaxUploadTest(BitcoinTestFramework):
  
     def add_options(self, parser):
         parser.add_option("--testbinary", dest="testbinary",
-                          default=os.getenv("CURVED", "nodescaped"),
+                          default=os.getenv("NODESCAPED", "nodescaped"),
                           help="nodescaped binary to test")
 
     def setup_chain(self):

@@ -62,10 +62,10 @@ for arg in sys.argv[1:]:
 
 #Set env vars
 buildDir = BUILDDIR
-if "CURVED" not in os.environ:
-    os.environ["CURVED"] = buildDir + '/src/nodescaped' + EXEEXT
-if "CURVECLI" not in os.environ:
-    os.environ["CURVECLI"] = buildDir + '/src/nodescape-cli' + EXEEXT
+if "NODESCAPED" not in os.environ:
+    os.environ["NODESCAPED"] = buildDir + '/src/nodescaped' + EXEEXT
+if "NODESCAPECLI" not in os.environ:
+    os.environ["NODESCAPECLI"] = buildDir + '/src/nodescape-cli' + EXEEXT
 
 if EXEEXT == ".exe" and "-win" not in opts:
     # https://github.com/bitcoin/bitcoin/commit/d52802551752140cf41f0d9a225a43e84404d3e9

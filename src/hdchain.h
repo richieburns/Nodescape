@@ -1,8 +1,8 @@
 // Copyright (c) 2014-2017 The Dash Core Developers
 // Copyright (c) 2018 Nodescape Coin developers
 // Distributed under the MIT software license, see the accompanying
-#ifndef CURVE_HDCHAIN_H
-#define CURVE_HDCHAIN_H
+#ifndef NODESCAPE_HDCHAIN_H
+#define NODESCAPE_HDCHAIN_H
 
 #include "key.h"
 #include "sync.h"
@@ -150,4 +150,4 @@ public:
     std::string GetKeyPath() const;
 };
 
-#endif // CURVE_HDCHAIN_H
+#endif // NODESCAPE_HDCHAIN_H

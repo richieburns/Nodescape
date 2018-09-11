@@ -35,8 +35,8 @@
 
 // Uncomment the following line to enable debugging messages
 // or enable on a per file basis prior to inclusion of util.h
-//#define ENABLE_CURVE_DEBUG
-#ifdef ENABLE_CURVE_DEBUG
+//#define ENABLE_NODESCAPE_DEBUG
+#ifdef ENABLE_NODESCAPE_DEBUG
 #define DBG( x ) x
 #else
 #define DBG( x ) 
