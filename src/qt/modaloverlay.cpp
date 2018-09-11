@@ -166,7 +166,7 @@ void ModalOverlay::showHide(bool hide, bool userRequested)
     animation->setDuration(300);
     animation->setStartValue(QPoint(0, hide ? 0 : this->height()));
     animation->setEndValue(QPoint(0, hide ? this->height() : 0));
-    animation->setEasingNodescape(QEasingNodescape::OutQuad);
+    animation->setEasingCurve(QEasingCurve::OutQuad);
     animation->start(QAbstractAnimation::DeleteWhenStopped);
     layerIsVisible = !hide;
 }
