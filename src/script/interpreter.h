@@ -24,6 +24,10 @@ enum
     SIGHASH_ALL = 1,
     SIGHASH_NONE = 2,
     SIGHASH_SINGLE = 3,
+    SIGHASH_ALL          = 1,
+    SIGHASH_NONE         = 2,
+    SIGHASH_SINGLE       = 3,
+    SIGHASH_FORKID       = 0x44,
     SIGHASH_ANYONECANPAY = 0x80,
 };
 
@@ -86,6 +90,9 @@ enum
     //
     // See BIP112 for details
     SCRIPT_VERIFY_CHECKSEQUENCEVERIFY = (1U << 10),
+
+    // Accept signature using SIGHASH_FORKID
+    SCRIPT_ENABLE_SIGHASH_FORKID = (1U << 11),
 };
 
 bool CheckSignatureEncoding(const std::vector<unsigned char> &vchSig, unsigned int flags, ScriptError* serror);
