@@ -89,7 +89,7 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const Consens
 
     if (!pindexLast || pindexLast->nHeight < 300000) {
         nPastBlocks = 48;
-    } else{
+    } else {
         nPastBlocks = 24;
     }
 
