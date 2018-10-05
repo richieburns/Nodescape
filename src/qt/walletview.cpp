@@ -52,6 +52,7 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
         QString theme = GUIUtil::getThemeName();
         exportButton->setIcon(QIcon(":/icons/" + theme + "/export"));
     }
+    exportButton->setStyleSheet("QButton { margin-right: 10px}");
     hbox_buttons->addStretch();
 
     // Sum of selected transactions
