@@ -21,8 +21,8 @@ QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
     unitlist.append(NSX);
-    unitlist.append(mCURV);
-    unitlist.append(uCURV);
+    unitlist.append(mNSX);
+    unitlist.append(uNSX);
     unitlist.append(duffs);
     return unitlist;
 }
@@ -32,8 +32,8 @@ bool BitcoinUnits::valid(int unit)
     switch(unit)
     {
     case NSX:
-    case mCURV:
-    case uCURV:
+    case mNSX:
+    case uNSX:
     case duffs:
         return true;
     default:
@@ -48,8 +48,8 @@ QString BitcoinUnits::name(int unit)
         switch(unit)
         {
             case NSX: return QString("NSX");
-            case mCURV: return QString("mCURV");
-            case uCURV: return QString::fromUtf8("μCURV");
+            case mNSX: return QString("mNSX");
+            case uNSX: return QString::fromUtf8("μNSX");
             case duffs: return QString("duffs");
             default: return QString("???");
         }
@@ -58,9 +58,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case NSX: return QString("tCURV");
-            case mCURV: return QString("mtCURV");
-            case uCURV: return QString::fromUtf8("μtCURV");
+            case NSX: return QString("tNSX");
+            case mNSX: return QString("mtCURV");
+            case uNSX: return QString::fromUtf8("μtCURV");
             case duffs: return QString("tduffs");
             default: return QString("???");
         }
@@ -74,8 +74,8 @@ QString BitcoinUnits::description(int unit)
         switch(unit)
         {
             case NSX: return QString("Nodescape");
-            case mCURV: return QString("Milli-Nodescape (1 / 1" THIN_SP_UTF8 "000)");
-            case uCURV: return QString("Micro-Nodescape (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case mNSX: return QString("Milli-Nodescape (1 / 1" THIN_SP_UTF8 "000)");
+            case uNSX: return QString("Micro-Nodescape (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             case duffs: return QString("Ten Nano-Nodescape (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
@@ -85,8 +85,8 @@ QString BitcoinUnits::description(int unit)
         switch(unit)
         {
             case NSX: return QString("TestNodescapes");
-            case mCURV: return QString("Milli-TestNodescape (1 / 1" THIN_SP_UTF8 "000)");
-            case uCURV: return QString("Micro-TestNodescape (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case mNSX: return QString("Milli-TestNodescape (1 / 1" THIN_SP_UTF8 "000)");
+            case uNSX: return QString("Micro-TestNodescape (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             case duffs: return QString("Ten Nano-TestNodescape (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
@@ -98,8 +98,8 @@ qint64 BitcoinUnits::factor(int unit)
     switch(unit)
     {
     case NSX:  return 100000000;
-    case mCURV: return 100000;
-    case uCURV: return 100;
+    case mNSX: return 100000;
+    case uNSX: return 100;
     case duffs: return 1;
     default:   return 100000000;
     }
@@ -110,8 +110,8 @@ int BitcoinUnits::decimals(int unit)
     switch(unit)
     {
     case NSX: return 8;
-    case mCURV: return 5;
-    case uCURV: return 2;
+    case mNSX: return 5;
+    case uNSX: return 2;
     case duffs: return 0;
     default: return 0;
     }
