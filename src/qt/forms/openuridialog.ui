@@ -31,7 +31,12 @@
       </widget>
      </item>
      <item>
-      <widget class="QValidatedLineEdit" name="uriEdit"/>
+      <widget class="QValidatedLineEdit" name="uriEdit">
+       <property name="styleSheet">
+        <string notr="true">margin-top:10px; margin-bottom:10px;
+</string>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QPushButton" name="selectFileButton">
@@ -77,7 +82,7 @@
   <customwidget>
    <class>QValidatedLineEdit</class>
    <extends>QLineEdit</extends>
-   <header>qvalidatedlineedit.h</header>
+   <header location="global">qvalidatedlineedit.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
