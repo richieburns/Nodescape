@@ -241,6 +241,7 @@
         <file alias="unchecked">res/images/drkblue/unchecked.png</file>
         <file alias="checked">res/images/drkblue/checked.png</file>
         <file alias="drkblue_downArrow">res/images/drkblue/drkblue_downArrow.png</file>
+        <file alias="drkblue_upArrow">res/images/drkblue/drkblue_upArrow.png</file>
         <file alias="drkblue_downArrow_small">res/images/drkblue/drkblue_downArrow_small.png</file>
         <file alias="drkblue_upArrow_small">res/images/drkblue/drkblue_upArrow_small.png</file>
         <file alias="drkblue_leftArrow_small">res/images/drkblue/drkblue_leftArrow_small.png</file>
@@ -256,6 +257,7 @@
         <file alias="unchecked">res/images/crownium/unchecked.png</file>
         <file alias="checked">res/images/crownium/checked.png</file>
         <file alias="drkblue_downArrow">res/images/crownium/drkblue_downArrow.png</file>
+        <file alias="drkblue_upArrow">res/images/crownium/drkblue_upArrow.png</file>
         <file alias="drkblue_downArrow_small">res/images/crownium/drkblue_downArrow_small.png</file>
         <file alias="drkblue_upArrow_small">res/images/crownium/drkblue_upArrow_small.png</file>
         <file alias="drkblue_leftArrow_small">res/images/crownium/drkblue_leftArrow_small.png</file>
@@ -271,6 +273,7 @@
         <file alias="unchecked">res/images/light/unchecked.png</file>
         <file alias="checked">res/images/light/checked.png</file>
         <file alias="drkblue_downArrow">res/images/light/drkblue_downArrow.png</file>
+        <file alias="drkblue_upArrow">res/images/light/drkblue_upArrow.png</file>
         <file alias="drkblue_downArrow_small">res/images/light/drkblue_downArrow_small.png</file>
         <file alias="drkblue_upArrow_small">res/images/light/drkblue_upArrow_small.png</file>
         <file alias="drkblue_leftArrow_small">res/images/light/drkblue_leftArrow_small.png</file>
@@ -284,6 +287,7 @@
         <file alias="about">res/images/trad/about.png</file>
         <file alias="nodescape_logo_horizontal">res/images/trad/nodescape_logo_horizontal.png</file>
         <file alias="drkblue_downArrow">res/images/trad/drkblue_downArrow.png</file>
+        <file alias="drkblue_upArrow">res/images/trad/drkblue_upArrow.png</file>
         <file alias="drkblue_downArrow_small">res/images/trad/drkblue_downArrow_small.png</file>
         <file alias="drkblue_upArrow_small">res/images/trad/drkblue_upArrow_small.png</file>
         <file alias="drkblue_leftArrow_small">res/images/trad/drkblue_leftArrow_small.png</file>
