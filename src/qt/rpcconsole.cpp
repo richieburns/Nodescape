@@ -262,13 +262,14 @@ RPCConsole::RPCConsole(const PlatformStyle *platformStyle, QWidget *parent) :
     consoleFontSize(0)
 {
     ui->setupUi(this);
+    this->setStyleSheet(GUIUtil::loadStyleSheet());
     GUIUtil::restoreWindowGeometry("nRPCConsoleWindow", this->size(), this);
     QString theme = GUIUtil::getThemeName();
     if (platformStyle->getImagesOnButtons()) {
         ui->openDebugLogfileButton->setIcon(QIcon(":/icons/" + theme + "/export"));
     }
     // Needed on Mac also
-    ui->clearButton->setIcon(QIcon(":/icons/" + theme + "/remove"));
+    ui->RPCClearButton->setIcon(QIcon(":/icons/" + theme + "/remove"));
     ui->fontBiggerButton->setIcon(QIcon(":/icons/" + theme + "/fontbigger"));
     ui->fontSmallerButton->setIcon(QIcon(":/icons/" + theme + "/fontsmaller"));
 
@@ -276,7 +277,7 @@ RPCConsole::RPCConsole(const PlatformStyle *platformStyle, QWidget *parent) :
     ui->lineEdit->installEventFilter(this);
     ui->messagesWidget->installEventFilter(this);
 
-    connect(ui->clearButton, SIGNAL(clicked()), this, SLOT(clear()));
+    connect(ui->RPCClearButton, SIGNAL(clicked()), this, SLOT(clear()));
     connect(ui->fontBiggerButton, SIGNAL(clicked()), this, SLOT(fontBigger()));
     connect(ui->fontSmallerButton, SIGNAL(clicked()), this, SLOT(fontSmaller()));
     connect(ui->btnClearTrafficGraph, SIGNAL(clicked()), ui->trafficGraph, SLOT(clear()));
