@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>780</width>
+    <width>560</width>
     <height>500</height>
    </rect>
   </property>
@@ -92,6 +92,9 @@
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QTextEdit" name="helpMessage">
+       <property name="lineWidth">
+        <number>2</number>
+       </property>
        <property name="readOnly">
         <bool>true</bool>
        </property>
@@ -113,27 +116,15 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>630</width>
-          <height>201</height>
+          <width>419</width>
+          <height>214</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
-          <widget class="QLabel" name="aboutMessage">
-           <property name="cursor">
-            <cursorShape>IBeamCursor</cursorShape>
-           </property>
-           <property name="textFormat">
-            <enum>Qt::PlainText</enum>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-           </property>
-           <property name="openExternalLinks">
-            <bool>true</bool>
-           </property>
-           <property name="textInteractionFlags">
-            <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+          <widget class="QTextBrowser" name="aboutMessage">
+           <property name="lineWidth">
+            <number>2</number>
            </property>
           </widget>
          </item>
