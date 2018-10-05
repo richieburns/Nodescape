@@ -131,17 +131,20 @@ CoinControlDialog::CoinControlDialog(const PlatformStyle *platformStyle, QWidget
     // see https://github.com/bitcoin/bitcoin/issues/5716
     ui->treeWidget->headerItem()->setText(COLUMN_CHECKBOX, QString());
 
-    ui->treeWidget->setColumnWidth(COLUMN_CHECKBOX, 84);
-    ui->treeWidget->setColumnWidth(COLUMN_AMOUNT, 100);
-    ui->treeWidget->setColumnWidth(COLUMN_LABEL, 170);
-    ui->treeWidget->setColumnWidth(COLUMN_ADDRESS, 190);
-    ui->treeWidget->setColumnWidth(COLUMN_PRIVATESEND_ROUNDS, 88);
-    ui->treeWidget->setColumnWidth(COLUMN_DATE, 80);
-    ui->treeWidget->setColumnWidth(COLUMN_CONFIRMATIONS, 100);
+    ui->treeWidget->setColumnWidth(COLUMN_CHECKBOX, 90);
+    ui->treeWidget->setColumnWidth(COLUMN_AMOUNT, 130);
+    ui->treeWidget->setColumnWidth(COLUMN_LABEL, 190);
+    ui->treeWidget->setColumnWidth(COLUMN_ADDRESS, 290);
+    ui->treeWidget->setColumnWidth(COLUMN_PRIVATESEND_ROUNDS, 110);
+    ui->treeWidget->setColumnWidth(COLUMN_DATE, 105);
+    ui->treeWidget->setColumnWidth(COLUMN_CONFIRMATIONS, 95);
     ui->treeWidget->setColumnHidden(COLUMN_TXHASH, true);         // store transaction hash in this column, but don't show it
     ui->treeWidget->setColumnHidden(COLUMN_VOUT_INDEX, true);     // store vout index in this column, but don't show it
     ui->treeWidget->setColumnHidden(COLUMN_AMOUNT_INT64, true);   // store amount int64 in this column, but don't show it
     ui->treeWidget->setColumnHidden(COLUMN_DATE_INT64, true);     // store date int64 in this column, but don't show it
+
+    // Center align header for sort arrows
+    ui->treeWidget->header()->setDefaultAlignment(Qt::AlignCenter);
 
     // default view is sorted by amount desc
     sortView(COLUMN_AMOUNT_INT64, Qt::DescendingOrder);
@@ -701,7 +704,7 @@ void CoinControlDialog::updateView()
     
     ui->treeWidget->clear();
     ui->treeWidget->setEnabled(false); // performance, otherwise updateLabels would be called for every checked checkbox
-    ui->treeWidget->setAlternatingRowColors(!treeMode);
+    ui->treeWidget->setAlternatingRowColors(false);
     QFlags<Qt::ItemFlag> flgCheckbox = Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsUserCheckable;
     QFlags<Qt::ItemFlag> flgTristate = Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsUserCheckable | Qt::ItemIsTristate;
 
