@@ -14,12 +14,12 @@ static const int MODEL_UPDATE_DELAY = 250;
 static const int MAX_PASSPHRASE_SIZE = 1024;
 
 /* NodescapeGUI -- Size of icons in status bar */
-static const int STATUSBAR_ICONSIZE = 16;
+static const int STATUSBAR_ICONSIZE = 24;
 
 static const bool DEFAULT_SPLASHSCREEN = true;
 
 /* Invalid field background style */
-#define STYLE_INVALID "background:#FF8080"
+#define STYLE_INVALID "background:#57202a"
 
 /* Transaction list -- unconfirmed transaction */
 #define COLOR_UNCONFIRMED QColor(128, 128, 128)
@@ -48,10 +48,10 @@ static const int MAX_URI_LENGTH = 255;
 #define EXPORT_IMAGE_SIZE 256
 
 /* Number of frames in spinner animation */
-#define SPINNER_FRAMES 36
+#define SPINNER_FRAMES 35
 
 #define QAPP_ORG_NAME "Nodescape"
-#define QAPP_ORG_DOMAIN "nodescape.org"
+#define QAPP_ORG_DOMAIN "nodescape.online"
 #define QAPP_APP_NAME_DEFAULT "Nodescape-Qt"
 #define QAPP_APP_NAME_TESTNET "Nodescape-Qt-testnet"
 
