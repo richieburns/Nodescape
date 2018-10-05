@@ -24,9 +24,11 @@
 #include <QCloseEvent>
 #include <QLabel>
 #include <QRegExp>
+#include <QTextBrowser>
 #include <QTextTable>
 #include <QTextCursor>
 #include <QVBoxLayout>
+
 
 /** "Help message" or "About" dialog box */
 HelpMessageDialog::HelpMessageDialog(QWidget *parent, HelpMode helpMode) :
@@ -49,6 +51,8 @@ HelpMessageDialog::HelpMessageDialog(QWidget *parent, HelpMode helpMode) :
     {
         setWindowTitle(tr("About Nodescape Core"));
 
+        
+
         /// HTML-format the license message from the core
         QString licenseInfo = QString::fromStdString(LicenseInfo());
         QString licenseInfoHTML = licenseInfo;
@@ -60,11 +64,14 @@ HelpMessageDialog::HelpMessageDialog(QWidget *parent, HelpMode helpMode) :
         // Replace newlines with HTML breaks
         licenseInfoHTML.replace("\n\n", "<br><br>");
 
-        ui->aboutMessage->setTextFormat(Qt::RichText);
+        // ui->aboutMessage->setTextFormat(Qt::RichText);
         ui->scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+        // Set hyperlink color
+        QString sheet = QString::fromLatin1("a { text-decoration: underline; color: #366ca9 }");
+        ui->aboutMessage->document()->setDefaultStyleSheet(sheet);
         text = version + "\n" + licenseInfo;
         ui->aboutMessage->setText(version + "<br><br>" + licenseInfoHTML);
-        ui->aboutMessage->setWordWrap(true);
+        // ui->aboutMessage->setWordWrap(true);
         ui->helpMessage->setVisible(false);
     } else if (helpMode == cmdline) {
         setWindowTitle(tr("Command-line options"));
@@ -131,7 +138,7 @@ HelpMessageDialog::HelpMessageDialog(QWidget *parent, HelpMode helpMode) :
     } else if (helpMode == pshelp) {
         setWindowTitle(tr("PrivateSend information"));
 
-        ui->aboutMessage->setTextFormat(Qt::RichText);
+        // ui->aboutMessage->setTextFormat(Qt::RichText);
         ui->scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         ui->aboutMessage->setText(tr("\
 <h3>PrivateSend Basics</h3> \
@@ -158,9 +165,9 @@ your funds will already be anonymized. No additional waiting is required.</li> \
 This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. \
 It can only do this, however, if you have automatic backups enabled.<br> \
 Consequently, users who have backups disabled will also have PrivateSend disabled. <hr>\
-For more info see <a href=\"https://nodescapepay.atlassian.net/wiki/display/DOC/PrivateSend\">https://nodescapepay.atlassian.net/wiki/display/DOC/PrivateSend</a> \
+For more info see <a href=\"http://docs.nodescape.online\"style=\"color: #366ca9;\">http://docs.nodescape.online</a> \
         "));
-        ui->aboutMessage->setWordWrap(true);
+        // ui->aboutMessage->setWordWrap(true);
         ui->helpMessage->setVisible(false);
         ui->aboutLogo->setVisible(false);
     }
