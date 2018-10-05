@@ -6,9 +6,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>954</width>
-    <height>500</height>
+    <width>1040</width>
+    <height>540</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1040</width>
+    <height>540</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1040</width>
+    <height>540</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Coin Selection</string>
@@ -332,7 +350,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>(un)select all</string>
+           <string>Select Alll</string>
           </property>
           <property name="autoDefault">
            <bool>false</bool>
@@ -348,7 +366,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>toggle lock state</string>
+           <string>Toggle Lock</string>
           </property>
           <property name="autoDefault">
            <bool>false</bool>
@@ -411,11 +429,29 @@
    </item>
    <item>
     <widget class="CoinControlTreeWidget" name="treeWidget">
+     <property name="font">
+      <font>
+       <family>MS Shell Dlg 2</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
      <property name="contextMenuPolicy">
       <enum>Qt::CustomContextMenu</enum>
      </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
      <property name="sortingEnabled">
       <bool>false</bool>
+     </property>
+     <property name="animated">
+      <bool>true</bool>
      </property>
      <property name="columnCount">
       <number>11</number>
@@ -438,12 +474,12 @@
      </column>
      <column>
       <property name="text">
-       <string>Received with label</string>
+       <string>Label</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Received with address</string>
+       <string>Address</string>
       </property>
      </column>
      <column>
@@ -458,7 +494,7 @@
      </column>
      <column>
       <property name="text">
-       <string>Confirmations</string>
+       <string>Conf</string>
       </property>
       <property name="toolTip">
        <string>Confirmed</string>
@@ -466,22 +502,22 @@
      </column>
      <column>
       <property name="text">
-       <string/>
+       <string notr="true">8</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string/>
+       <string notr="true">9</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string/>
+       <string notr="true">10</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string/>
+       <string notr="true">11</string>
       </property>
      </column>
     </widget>
@@ -493,6 +529,9 @@
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
