@@ -1457,7 +1457,7 @@ https://www.transifex.com/projects/p/nodescape/</translation>
     </message>
     <message>
         <source>The denominations you submitted to the Masternode.&lt;br&gt;To mix, other users must submit the exact same denominations.</source>
-        <translation>您向主节点所提交的用以面额化混合的CURV,&lt;br&gt;当其他用户提交相同的面额化CURV数量时,将开始混合.</translation>
+        <translation>您向主节点所提交的用以面额化混合的NSX,&lt;br&gt;当其他用户提交相同的面额化NSX数量时,将开始混合.</translation>
     </message>
     <message>
         <source>(Last Message)</source>
