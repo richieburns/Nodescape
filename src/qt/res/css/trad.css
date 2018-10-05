@@ -1,22 +1,9 @@
 /* MODAL OVERLAY */
 
-QWidget#bgWidget { /* The 'frame' overlaying the overview-page */
-    background: rgba(0,0,0,220);
-}
-
-QWidget#contentWidget { /* The actual content with the text/buttons/etc... */
-    background: rgba(255,255,255,240);
-    border-radius: 6px;
-}
-
-/* SEND DIALOG */
-
-QDialog#SendCoinsDialog .QCheckBox#checkUseInstantSend { /* InstantSend Checkbox */
-margin-left:10px;
-margin-right:20px;
-}
-
-QDialog#SendCoinsDialog QLabel#labelBalance {
-margin-left:0px;
-padding-left:0px;
+WalletFrame {
+    border-image: url(':/images/crownium/drkblue_walletFrame_bg') 0 0 0 0 stretch stretch;
+    /* background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #222222, stop: .1 #EEEEEE, stop: .9 #EEEEEE, stop: 1 #222222); */
+    border-top:0px solid #000;
+    margin:0;
+    padding:0;
 }
