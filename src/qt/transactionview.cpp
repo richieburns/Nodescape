@@ -57,19 +57,41 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
         hlayout->addSpacing(5);
     }
     QString theme = GUIUtil::getThemeName();
+
+    /* Status Label*/
+
+    tranStatusLabel = new QLabel(this);
+    tranStatusLabel->setObjectName("tranStatusLabel");
+    if (platformStyle->getUseExtraSpacing()) {
+        tranStatusLabel->setFixedWidth(STATUS_COLUMN_WIDTH);
+    } else {
+        tranStatusLabel->setFixedWidth(STATUS_COLUMN_WIDTH - 1);
+    }
+    hlayout->addWidget(tranStatusLabel);
+
+    /* Watch Only Widget*/
+
     watchOnlyWidget = new QComboBox(this);
-    watchOnlyWidget->setFixedWidth(24);
+    watchOnlyWidget->setObjectName("watchOnlyWidget");
+    if (platformStyle->getUseExtraSpacing()) {
+        watchOnlyWidget->setFixedWidth(WATCHONLY_COLUMN_WIDTH);
+    } else {
+        watchOnlyWidget->setFixedWidth(WATCHONLY_COLUMN_WIDTH - 1);
+    }
     watchOnlyWidget->addItem("", TransactionFilterProxy::WatchOnlyFilter_All);
     watchOnlyWidget->addItem(QIcon(":/icons/" + theme + "/eye_plus"), "", TransactionFilterProxy::WatchOnlyFilter_Yes);
     watchOnlyWidget->addItem(QIcon(":/icons/" + theme + "/eye_minus"), "", TransactionFilterProxy::WatchOnlyFilter_No);
     hlayout->addWidget(watchOnlyWidget);
 
+    /* Date Widget */
+
     dateWidget = new QComboBox(this);
     if (platformStyle->getUseExtraSpacing()) {
-        dateWidget->setFixedWidth(120);
+        dateWidget->setFixedWidth(DATE_COLUMN_WIDTH);
     } else {
-        dateWidget->setFixedWidth(120);
+        dateWidget->setFixedWidth(DATE_COLUMN_WIDTH - 1);
     }
+    dateWidget->setObjectName("dateWidget");
     dateWidget->addItem(tr("All"), All);
     dateWidget->addItem(tr("Today"), Today);
     dateWidget->addItem(tr("This week"), ThisWeek);
@@ -80,11 +102,13 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     dateWidget->setCurrentIndex(settings.value("transactionDate").toInt());
     hlayout->addWidget(dateWidget);
 
+    /* Type Widget */
+
     typeWidget = new QComboBox(this);
     if (platformStyle->getUseExtraSpacing()) {
         typeWidget->setFixedWidth(TYPE_COLUMN_WIDTH);
     } else {
-        typeWidget->setFixedWidth(TYPE_COLUMN_WIDTH-1);
+        typeWidget->setFixedWidth(TYPE_COLUMN_WIDTH - 1);
     }
 
     typeWidget->addItem(tr("All"), TransactionFilterProxy::ALL_TYPES);
@@ -105,6 +129,8 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
 
     hlayout->addWidget(typeWidget);
 
+    /* Address Widget*/
+
     addressWidget = new QLineEdit(this);
 #if QT_VERSION >= 0x040700
     addressWidget->setPlaceholderText(tr("Enter address or label to search"));
@@ -112,14 +138,16 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     addressWidget->setObjectName("addressWidget");
     hlayout->addWidget(addressWidget);
 
+    /* Amount Widget */
+
     amountWidget = new QLineEdit(this);
 #if QT_VERSION >= 0x040700
     amountWidget->setPlaceholderText(tr("Min amount"));
 #endif
     if (platformStyle->getUseExtraSpacing()) {
-        amountWidget->setFixedWidth(118);
+        amountWidget->setFixedWidth(AMOUNT_MINIMUM_COLUMN_WIDTH);
     } else {
-        amountWidget->setFixedWidth(125);
+        amountWidget->setFixedWidth(AMOUNT_MINIMUM_COLUMN_WIDTH);
     }  
     amountWidget->setValidator(new QDoubleValidator(0, 1e20, 8, this));
     amountWidget->setObjectName("amountWidget");
@@ -215,7 +243,8 @@ void TransactionView::setModel(WalletModel *model)
 
         transactionView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         transactionView->setModel(transactionProxyModel);
-        transactionView->setAlternatingRowColors(true);
+        transactionView->setAlternatingRowColors(false);
+        transactionView->setShowGrid(false);
         transactionView->setSelectionBehavior(QAbstractItemView::SelectRows);
         transactionView->setSelectionMode(QAbstractItemView::ExtendedSelection);
         transactionView->setSortingEnabled(true);
@@ -646,6 +675,6 @@ bool TransactionView::eventFilter(QObject *obj, QEvent *event)
 // show/hide column Watch-only
 void TransactionView::updateWatchOnlyColumn(bool fHaveWatchOnly)
 {
-    watchOnlyWidget->setVisible(true);
+    watchOnlyWidget->setVisible(false);
     transactionView->setColumnHidden(TransactionTableModel::Watchonly, !fHaveWatchOnly);
 }
