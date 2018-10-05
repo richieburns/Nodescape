@@ -19,6 +19,12 @@
      <property name="toolTip">
       <string>This pane shows a detailed description of the transaction</string>
      </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
      <property name="readOnly">
       <bool>true</bool>
      </property>
