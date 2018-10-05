@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>700</width>
-    <height>380</height>
+    <width>600</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Signatures - Sign / Verify a Message</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <property name="modal">
    <bool>true</bool>
@@ -19,6 +22,9 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTabWidget" name="tabWidget">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
@@ -50,12 +56,18 @@
            <property name="toolTip">
             <string>The Nodescape address to sign the message with</string>
            </property>
+           <property name="styleSheet">
+            <string notr="true">margin-top:5px; margin-bottom:5px;</string>
+           </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="addressBookButton_SM">
            <property name="toolTip">
             <string>Choose previously used address</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background: transparent;</string>
            </property>
            <property name="text">
             <string/>
@@ -73,6 +85,9 @@
            <property name="toolTip">
             <string>Paste address from clipboard</string>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background: transparent;</string>
+           </property>
            <property name="text">
             <string/>
            </property>
@@ -88,18 +103,20 @@
        </item>
        <item>
         <widget class="QPlainTextEdit" name="messageIn_SM">
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
          <property name="toolTip">
           <string>Enter the message you want to sign here</string>
          </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="signatureLabel_SM">
-         <property name="text">
-          <string>Signature</string>
+         <property name="styleSheet">
+          <string notr="true">border: 1px solid #818181; border-radius:5px</string>
          </property>
-         <property name="textFormat">
-          <enum>Qt::PlainText</enum>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
          </property>
         </widget>
        </item>
@@ -109,11 +126,24 @@
           <number>0</number>
          </property>
          <item>
+          <widget class="QLabel" name="signatureLabel_SM">
+           <property name="text">
+            <string>Signature</string>
+           </property>
+           <property name="textFormat">
+            <enum>Qt::PlainText</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QLineEdit" name="signatureOut_SM">
            <property name="font">
             <font>
              <italic>true</italic>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">margin-top:5px; margin-bottom:5px;margin-left:10px;</string>
            </property>
            <property name="readOnly">
             <bool>true</bool>
@@ -124,6 +154,9 @@
           <widget class="QPushButton" name="copySignatureButton_SM">
            <property name="toolTip">
             <string>Copy the current signature to the system clipboard</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background: transparent;</string>
            </property>
            <property name="text">
             <string/>
@@ -139,6 +172,12 @@
         <layout class="QHBoxLayout" name="horizontalLayout_3_SM">
          <item>
           <widget class="QPushButton" name="signMessageButton_SM">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="toolTip">
             <string>Sign the message to prove you own this Nodescape address</string>
            </property>
@@ -152,6 +191,12 @@
          </item>
          <item>
           <widget class="QPushButton" name="clearButton_SM">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="toolTip">
             <string>Reset all sign message fields</string>
            </property>
@@ -240,12 +285,18 @@
            <property name="toolTip">
             <string>The Nodescape address the message was signed with</string>
            </property>
+           <property name="styleSheet">
+            <string notr="true">margin-top:5px; margin-bottom:5px;</string>
+           </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="addressBookButton_VM">
            <property name="toolTip">
             <string>Choose previously used address</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background: transparent;</string>
            </property>
            <property name="text">
             <string/>
@@ -261,10 +312,18 @@
         </layout>
        </item>
        <item>
-        <widget class="QPlainTextEdit" name="messageIn_VM"/>
+        <widget class="QPlainTextEdit" name="messageIn_VM">
+         <property name="styleSheet">
+          <string notr="true">border: 1px solid #818181; border-radius:5px</string>
+         </property>
+        </widget>
        </item>
        <item>
-        <widget class="QValidatedLineEdit" name="signatureIn_VM"/>
+        <widget class="QValidatedLineEdit" name="signatureIn_VM">
+         <property name="styleSheet">
+          <string notr="true">margin-top:5px; margin-bottom:5px;</string>
+         </property>
+        </widget>
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2_VM">
