@@ -59,8 +59,8 @@ public:
     enum Unit
     {
         NSX,
-        mCURV,
-        uCURV,
+        mNSX,
+        uNSX,
         duffs
     };
 
