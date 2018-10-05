@@ -31,6 +31,9 @@
    </property>
    <item>
     <widget class="QLabel" name="warningLabel">
+     <property name="styleSheet">
+      <string notr="true">margin-bottom:10px;</string>
+     </property>
      <property name="text">
       <string notr="true">Placeholder text</string>
      </property>
@@ -52,6 +55,9 @@
      </property>
      <item row="0" column="0">
       <widget class="QLabel" name="passLabel1">
+       <property name="styleSheet">
+        <string notr="true">margin-right:5px;</string>
+       </property>
        <property name="text">
         <string>Enter passphrase</string>
        </property>
@@ -66,6 +72,9 @@
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="passLabel2">
+       <property name="styleSheet">
+        <string notr="true">margin-right:5px;</string>
+       </property>
        <property name="text">
         <string>New passphrase</string>
        </property>
@@ -80,6 +89,9 @@
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="passLabel3">
+       <property name="styleSheet">
+        <string notr="true">margin-right:5px;</string>
+       </property>
        <property name="text">
         <string>Repeat new passphrase</string>
        </property>
@@ -113,14 +125,14 @@
        <property name="enabled">
         <bool>true</bool>
        </property>
+       <property name="visible">
+        <bool>false</bool>
+       </property>
        <property name="toolTip">
         <string>Serves to disable the trivial sendmoney when OS account compromised. Provides no real security.</string>
        </property>
        <property name="text">
         <string>Only for mixing via PrivateSend</string>
-       </property>
-       <property name="visible">
-        <bool>false</bool>
        </property>
       </widget>
      </item>
