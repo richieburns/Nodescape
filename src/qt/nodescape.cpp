@@ -664,6 +664,10 @@ int main(int argc, char *argv[])
     // Re-initialize translations after changing application name (language in network-specific settings can be different)
     initTranslations(qtTranslatorBase, qtTranslator, translatorBase, translator);
 
+    QPalette nsxPalette;
+    nsxPalette.setColor(QPalette::Link, QColor(70,110,156));    
+    qApp->setPalette(nsxPalette);
+
 #ifdef ENABLE_WALLET
     /// 7a. parse masternode.conf
     std::string strErr;
