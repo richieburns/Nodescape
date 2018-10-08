@@ -59,8 +59,8 @@ QString BitcoinUnits::name(int unit)
         switch(unit)
         {
             case NSX: return QString("tNSX");
-            case mNSX: return QString("mtCURV");
-            case uNSX: return QString::fromUtf8("μtCURV");
+            case mNSX: return QString("mtNSX");
+            case uNSX: return QString::fromUtf8("μtNSX");
             case duffs: return QString("tduffs");
             default: return QString("???");
         }

@@ -251,9 +251,9 @@ public:
         pchMessageStart[2] = 0xbe;
         pchMessageStart[3] = 0xd6;
         vAlertPubKey = ParseHex("04b9e9f66f51eb0e9041fdf04c3992bd62b5a0e45bf2662bc7ba324602c57d78778fb1ad57b032402290ce8f78001437c0e4df874ff6a4bb6a9a033de92966066a");
-        nDefaultPort = 19191;
-        nMaxTipAge = 0x7fffffff; // allow mining on top of old blocks for testnet
-        nDelayGetHeadersTime = 0x7fffffff;
+        nDefaultPort = 19696;
+        nMaxTipAge = 6 * 60 * 60; 
+        nDelayGetHeadersTime = 24 * 60 * 60;
         nPruneAfterHeight = 1000;
 
         genesis = CreateGenesisBlock(1517422753, 81949, 0x1e0ffff0, 1, 1 * COIN);
@@ -262,8 +262,9 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0xb5a441df95494c216a9f6d3366a98d3c948cd03373b757fa1cf3305812d6c14b"));
 
         vFixedSeeds.clear();
-        vSeeds.clear();
-        //vSeeds.push_back(CDNSSeedData("nodescapecash.com",  "testdnsseed.nodescapecash.com"));
+        vSeeds.push_back(CDNSSeedData("0", "54.36.162.25")); // UK
+        vSeeds.push_back(CDNSSeedData("1", "139.99.107.38")); // Singapore
+        vSeeds.push_back(CDNSSeedData("2", "51.38.239.120")); // France
 
         // Testnet Nodescape addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
