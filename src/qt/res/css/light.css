@@ -1,3 +1,5 @@
+/* TODO: Condense re-used CSS, reduce number of greyscale colours*/
+
 QMainWindow {
     min-width:1050px;
     min-height: 660px;
@@ -12,7 +14,7 @@ WalletFrame {
 }
 
 .QFrame {
-    background-color: transparent;
+    background-color:  #e0d3e8;
     border: none;
 }
 
@@ -70,8 +72,8 @@ QMenu::item:selected {
 
 QToolTip {
     color: #ffffff;
-    background: #000000;
-    border: none;
+    background: #1d1d2a;
+    border: 1px solid #3c3745;
     border-radius: 5px;
 }
 
@@ -319,15 +321,6 @@ QComboBox::drop-down {
 QComboBox::down-arrow {
     border-image: url(':/images/light/drkblue_downArrow_small') 0 0 0 0 stretch stretch;
 }
-
-/* QComboBox QListView {
-    background:#000000;
-    border:1px solid #666666;
-    padding-right:1px;
-    padding-left:3px;
-    color:#ffffff;
-    border: 1px solid #505050
-} */
 
 QComboBox QAbstractItemView {
     background:#000000;
@@ -962,28 +955,7 @@ QDialog .QTabWidget {
     padding-right:10px;
     padding-top:5px;
     padding-bottom:5px;
-}
-    
-/* QDialog .QTabWidget .QWidget {
-    background-color:#222230;
-    color:#ffffff;
-}
-    
-QDialog .QTabWidget .QWidget QAbstractSpinBox {
-    min-height:15px;
-}
-    
-QDialog .QTabWidget .QWidget QAbstractSpinBox::down-button {
-    width:15px;
-}
-    
-QDialog .QTabWidget .QWidget QAbstractSpinBox::up-button {
-    width:15px;
-}
-    
-QDialog .QTabWidget .QWidget QComboBox {
-    min-height:15px;
-} */
+}  
     
 QDialog QWidget { /* Remove Annoying Focus Rectangle */
     outline: 0;
@@ -1067,11 +1039,6 @@ QDialog#OpenURIDialog QLabel#label { /* URI Label */
     font-weight:bold;
 }
     
-/* QDialog#OpenURIDialog QPushButton#selectFileButton {
-    padding-left:10px;
-    padding-right:10px;
-} */
-
 /* Verify Message */
 
 QDialog#SignVerifyMessageDialog {
@@ -1093,29 +1060,6 @@ QWidget#AddressBookPage {
     background-color:#222230;
 }
     
-/* QWidget#AddressBookPage QPushButton#newAddress {
-    padding-left:10px;
-    padding-right:10px;
-} */
-
-/* QWidget#AddressBookPage QPushButton#newAddress:pressed {
-    border:1px solid #9e9e9e;
-} */
-
-/* QWidget#AddressBookPage QPushButton#copyAddress {
-    padding-left:10px;
-    padding-right:10px;
-} */
-
-/* QWidget#AddressBookPage QPushButton#deleteAddress {
-    padding-left:10px;
-    padding-right:10px;
-} */
-
-/* QWidget#AddressBookPage QPushButton#deleteAddress:pressed {
-    border:1px solid #9e9e9e;
-} */
-
 QWidget#AddressBookPage QHeaderView::section { /* Min width for Windows fix */
     min-width:260px;
 }
@@ -1200,11 +1144,6 @@ QDialog#SendCoinsDialog .QFrame#frameCoinControl > .QLabel { /* Default Font Col
     font-weight:normal;
     color: #ffffff;
 }
-
-/* QDialog#SendCoinsDialog .QFrame#frameCoinControl .QPushButton#pushButtonCoinControl {
-    padding-left:10px;
-    padding-right:10px;
-} */
 
 QDialog#SendCoinsDialog .QFrame#frameCoinControl .QLabel#labelCoinControlFeatures { /* Coin Control Header */
     font-weight: bold;
