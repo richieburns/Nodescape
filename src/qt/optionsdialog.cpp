@@ -92,11 +92,8 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     }
     
     /* Theme selector */
-    ui->theme->addItem(QString("NSX-light"), QVariant("light"));
-    ui->theme->addItem(QString("NSX-light-hires"), QVariant("light-hires"));
-    ui->theme->addItem(QString("NSX-green"), QVariant("drkblue"));
-    ui->theme->addItem(QString("NSX-Crownium"), QVariant("crownium"));
-    ui->theme->addItem(QString("NSX-traditional"), QVariant("trad"));
+    ui->theme->addItem(QString("NSX-Default"), QVariant("light"));
+    // ui->theme->addItem(QString("NSX-Light"), QVariant("crownium"));
     
     /* Language selector */
     QDir translations(":translations");

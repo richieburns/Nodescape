@@ -6,6 +6,10 @@ QMainWindow {
     border: none;
 }
 
+QValueComboBox {
+    border: none;
+}
+
 WalletFrame {
     border-image: url(':/images/light/drkblue_walletFrame_bg') 0 0 0 0 stretch stretch;
     border-top: none;
@@ -14,7 +18,7 @@ WalletFrame {
 }
 
 .QFrame {
-    background-color:  #e0d3e8;
+    background-color: transparent;
     border: none;
 }
 
@@ -901,7 +905,7 @@ QWidget .QFrame#frame_2 .QLabel#label_4 { /* Recent Transactions Label */
     min-width:180px;
     color:rgb(255, 255, 255);
     margin-left:30px;
-    margin-top:2px;
+    margin-top:5px;
     margin-right:5px;
     padding-right:5px;
     font-weight:bold;
@@ -1250,12 +1254,12 @@ QDialog#ReceiveRequestDialog QTextEdit { /* Contents of Receive Coin Dialog */
     background: transparent;
     color: #ffffff;
     font-size: 12px;
+    
 }
 
 QDialog#ReceiveRequestDialog > QPushButton { 
-    min-width: 70px;
-    max-width: 70px;
-    margin-bottom: 10px;
+    min-width: 100px;
+    max-width: 100px;
 }
 
 /* Receive Coins */
