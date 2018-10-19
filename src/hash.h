@@ -414,4 +414,115 @@ inline uint256 HashX11(const T1 pbegin, const T1 pend)
     return hash[10].trim256();
 }
 
+static void getView(const int pViewPoint, int *output)
+{
+	// Views:
+	int nView[16][9] = {
+		{ 0, 1, 2, 3, 4, 5, 6, 7, 8 },
+		{ 0, 1, 2, 3, 5, 4, 6, 7, 8 },
+		{ 0, 1, 2, 5, 3, 6, 4, 7, 8 },
+		{ 0, 1, 5, 2, 6, 3, 7, 4, 8 },
+		{ 0, 5, 1, 6, 2, 7, 3, 8, 4 },
+		{ 5, 0, 6, 1, 7, 2, 8, 3, 4 },
+		{ 5, 6, 0, 7, 1, 8, 2, 3, 4 },
+		{ 5, 6, 7, 0, 8, 1, 2, 3, 4 },
+		{ 5, 6, 7, 8, 0, 1, 2, 3, 4 },
+		{ 5, 6, 7, 0, 8, 1, 2, 3, 4 },
+		{ 5, 6, 0, 7, 1, 8, 2, 3, 4 },
+		{ 5, 0, 6, 1, 7, 2, 8, 3, 4 },
+		{ 0, 5, 1, 6, 2, 7, 3, 8, 4 },
+		{ 0, 1, 5, 2, 6, 3, 7, 4, 8 },
+		{ 0, 1, 2, 5, 3, 6, 4, 7, 8 },
+		{ 0, 1, 2, 3, 5, 4, 6, 7, 8 }
+	};
+
+		for (int i = 0; i < 9; i++) {
+			output[i] = nView[pViewPoint][i];
+		}
+}
+
+template<typename T1>
+inline uint256 parallax_hash(const T1 pbegin, const T1 pend, const uint256 PrevBlockHash)
+{
+    static unsigned char pblank[1];
+    int pView[9];
+    int pViewPoint;
+    uint512 hash[16];
+
+    sph_skein512_context     ctx_skein;     // 0
+    sph_luffa512_context     ctx_luffa;     // 1
+    sph_keccak512_context    ctx_keccak;    // 2
+    sph_jh512_context        ctx_jh;        // 3
+    sph_groestl512_context   ctx_groestl;   // 4
+    sph_echo512_context      ctx_echo;      // 5
+    sph_cubehash512_context  ctx_cubehash;  // 6
+    sph_bmw512_context       ctx_bmw;       // 7
+    sph_blake512_context     ctx_blake;     // 8      
+    
+    pViewPoint = PrevBlockHash.GetLast();
+    getView(pViewPoint, pView);
+
+    for (int i = 0; i < 9; ++i)
+    {
+        const void *in;
+        int len;
+
+        if (i == 0) {
+            in = (pbegin == pend ? pblank : static_cast<const void*>(&pbegin[0]));
+            len = 80;
+        } 
+
+        switch(pView[i]) {
+            case 0:
+                sph_skein512_init(&ctx_skein);
+                sph_skein512 (&ctx_skein, in, len);
+                sph_skein512_close(&ctx_skein, static_cast<void*>(&hash[i]));
+                break;
+            case 1:
+                sph_luffa512_init(&ctx_luffa);
+                sph_luffa512 (&ctx_luffa, in, len);
+                sph_luffa512_close(&ctx_luffa, static_cast<void*>(&hash[i]));
+                break;
+            case 2: 
+                sph_keccak512_init(&ctx_keccak);
+                sph_keccak512 (&ctx_keccak, in, len);
+                sph_keccak512_close(&ctx_keccak, static_cast<void*>(&hash[i]));
+                break;
+            case 3:
+                sph_jh512_init(&ctx_jh);
+                sph_jh512 (&ctx_jh, in, len);
+                sph_jh512_close(&ctx_jh, static_cast<void*>(&hash[i]));
+                break;
+            case 4:
+                sph_groestl512_init(&ctx_groestl);
+                sph_groestl512 (&ctx_groestl, in, len);
+                sph_groestl512_close(&ctx_groestl, static_cast<void*>(&hash[i]));
+                break;
+            case 5:
+                sph_echo512_init(&ctx_echo);
+                sph_echo512 (&ctx_echo, in, len);
+                sph_echo512_close(&ctx_echo, static_cast<void*>(&hash[i]));
+                break;
+            case 6:
+                sph_cubehash512_init(&ctx_cubehash);
+                sph_cubehash512 (&ctx_cubehash, in, len);
+                sph_cubehash512_close(&ctx_cubehash, static_cast<void*>(&hash[i]));
+                break;
+            case 7:
+                sph_bmw512_init(&ctx_bmw);
+                sph_bmw512 (&ctx_bmw, in, len);
+                sph_bmw512_close(&ctx_bmw, static_cast<void*>(&hash[i]));
+                break;
+            case 8: 
+                sph_blake512_init(&ctx_blake);
+                sph_blake512 (&ctx_blake, in, len);
+                sph_blake512_close(&ctx_blake, static_cast<void*>(&hash[i]));
+                break;
+        }
+        in = static_cast<const void*>(&hash[i-1]);
+        len = 64;
+    }
+    return hash[8].trim256();
+}
+
 #endif // BITCOIN_HASH_H
