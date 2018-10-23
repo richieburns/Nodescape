@@ -91,7 +91,7 @@ public:
         consensus.nMajorityWindow = 1000;
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S(""); // not used
-        consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
+        consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 1 * 60 * 60; // 1 hour
         consensus.nPowTargetSpacing = 60; // 1 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
@@ -217,7 +217,7 @@ public:
         consensus.nMajorityWindow = 100; // 100
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("0x00");
-        consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
+        consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 24 * 60 * 60; // 1 day
         consensus.nPowTargetSpacing = 60; // 1 minute
         consensus.fPowAllowMinDifficultyBlocks = true;
