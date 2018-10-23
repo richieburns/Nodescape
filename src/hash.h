@@ -519,7 +519,7 @@ inline uint256 parallax_hash(const T1 pbegin, const T1 pend, const uint256 PrevB
                 sph_blake512_close(&ctx_blake, static_cast<void*>(&hash[i]));
                 break;
         }
-        in = static_cast<const void*>(&hash[i-1]);
+        in = static_cast<const void*>(&hash[i]);
         len = 64;
     }
     return hash[8].trim256();
