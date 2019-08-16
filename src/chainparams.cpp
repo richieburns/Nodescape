@@ -150,11 +150,9 @@ public:
         vSeeds.push_back(CDNSSeedData("2", "51.38.239.120")); // France
 
         // TODO Ends
-        
-        // Nodescape addresses are carried over from Curve Coin
 
-        // Nodescape addresses start with 'C'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,28);
+        // Nodescape addresses start with 'N'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,52);
         // Nodescape script addresses start with '7'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,16);
         // Nodescape private keys start with '7' or 'A'
