@@ -33,14 +33,7 @@ void skein_hash(const char* input, char* output, uint32_t len)
 
 uint256 CBlockHeader::GetHash() const
 {
-    if (nTime < 1537220869) { //Last Skein block GMT: Monday, September 17, 2018 9:47:48 PM
-            uint256 thash;
-            uint32_t len = (END(nNonce) - BEGIN(nVersion))*sizeof(BEGIN(nVersion)[0]);
-            skein_hash(&BEGIN(nVersion)[0], (char *) &thash, len);
-            return thash;
-    } else {
-           return parallax_hash(BEGIN(nVersion), END(nNonce), hashPrevBlock);
-    }
+    return parallax_hash(BEGIN(nVersion), END(nNonce), hashPrevBlock);
 }
 
 std::string CBlock::ToString() const
