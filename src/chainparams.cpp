@@ -137,9 +137,9 @@ public:
         
         // TODO - Set-up additional nodes
 
-        vSeeds.push_back(CDNSSeedData("0", "54.36.162.25")); // UK
+        vSeeds.push_back(CDNSSeedData("0", "51.38.69.210")); // UK
         vSeeds.push_back(CDNSSeedData("1", "139.99.107.38")); // Singapore
-        vSeeds.push_back(CDNSSeedData("2", "51.38.239.120")); // France
+        vSeeds.push_back(CDNSSeedData("2", "157.230.131.45")); // USA
 
         // TODO Ends
 
