@@ -1231,20 +1231,16 @@ NOTE:   unlike bitcoin we are using PREVIOUS block height here,
 */
 CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params& consensusParams, bool fSuperblockPartOnly)
 {
-    CAmount nSubsidy = 50 * COIN; 
+    CAmount nSubsidy = 30 * COIN; 
 
     if (nPrevHeight == 0)
-	      nSubsidy = 1625000 * COIN;
-    else if (nPrevHeight >= 1 && nPrevHeight <= 101)
+	      nSubsidy = 1825595 * COIN;
+    else if (nPrevHeight >= 1 && nPrevHeight <= 10080) // Approx 7 Days
         nSubsidy = 1 * COIN;
-    else if (nPrevHeight < 500000)
-	      nSubsidy = static_cast<CAmount>(nSubsidy - (nSubsidy-1)*nPrevHeight/500000);
+    else if (nPrevHeight < 2610720) // Approx 5 Years
+	      nSubsidy = static_cast<CAmount>(nSubsidy - (nSubsidy-1)*nPrevHeight/2610720); //Total supply 42,000,000 over 5  years
     else
         nSubsidy = 1 * COIN;
-
-    // yearly decline of production by 12.5% per year
-    for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval)
-        nSubsidy -= nSubsidy/8;
 
     // Hard fork to reduce the block reward by 10 extra percent (allowing budget/superblocks)
     CAmount nSuperblockPart = (nPrevHeight > consensusParams.nBudgetPaymentsStartBlock) ? nSubsidy/10 : 0;
@@ -1254,6 +1250,7 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
 
 CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
 {
+    // Masternodes 45% of block value
   CAmount ret = blockValue * 0.45;
   return ret;
 }
